@@ -9,12 +9,12 @@ import {
 } from "llamaindex";
 import { HuggingFaceEmbedding } from "llamaindex/embeddings/HuggingFaceEmbedding";
 
+Settings.embedModel = new HuggingFaceEmbedding({
+  modelType: "BAAI/bge-small-en-v1.5",
+});
 Settings.llm = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_KEY ?? "FAKE_KEY_TO_PASS_TESTS",
   model: "gpt-4o",
-});
-Settings.embedModel = new HuggingFaceEmbedding({
-  modelType: "BAAI/bge-small-en-v1.5",
 });
 Settings.callbackManager.on("llm-tool-call", (event) => {
   console.log(event.detail);

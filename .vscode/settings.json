@@ -14,5 +14,7 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.prettierPath": "./node_modules/prettier"
+  "prettier.prettierPath": "./node_modules/prettier",
+  "liveServer.settings.port": 5501,
+  "cSpell.words": ["llamaindex", "xenova"]
 }
