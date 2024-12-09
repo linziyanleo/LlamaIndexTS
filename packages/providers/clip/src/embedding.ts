@@ -53,6 +53,7 @@ export class ClipEmbedding extends MultiModalEmbedding {
   }
 
   async getTokenizer() {
+    console.log("Loading tokenizer...");
     const { AutoTokenizer } = await loadTransformers((transformer) => {
       Settings.callbackManager.dispatchEvent(
         "load-transformers",
@@ -69,6 +70,7 @@ export class ClipEmbedding extends MultiModalEmbedding {
   }
 
   async getProcessor() {
+    console.log("Loading processor...");
     const { AutoProcessor } = await loadTransformers((transformer) => {
       Settings.callbackManager.dispatchEvent(
         "load-transformers",
@@ -85,6 +87,7 @@ export class ClipEmbedding extends MultiModalEmbedding {
   }
 
   async getVisionModel() {
+    console.log("Loading vision model...");
     const { CLIPVisionModelWithProjection } = await loadTransformers(
       (transformer) => {
         Settings.callbackManager.dispatchEvent(
@@ -106,6 +109,7 @@ export class ClipEmbedding extends MultiModalEmbedding {
   }
 
   async getTextModel() {
+    console.log("Loading text model...");
     const { CLIPTextModelWithProjection } = await loadTransformers(
       (transformer) => {
         Settings.callbackManager.dispatchEvent(
